@@ -135,16 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // 📌 දසිත්, ඔයාගේ පින්තූරවල නම් (Paths) වෙනස් කරන්න ඕනේ මෙන්න මේ පල්ලෙහා තියෙන ලිස්ට් එකෙන් විතරයි!
     const myProjectsData = {
         'illustrator': [
-            { title: 'Vector Portrait Design', desc: 'Detailed vector portrait created in Adobe Illustrator.', img: 'images/vector-portrait.png' },
-            { title: 'Modern Brand Logo', desc: 'Minimalist corporate identity logo design.', img: 'images/logo-design.png' }
+            { title: 'Visiting card', 
+             desc: 'Detailed vector portrait created in Adobe Illustrator.', 
+             img: 'apex-motors-vcard .jpg' },
+            
+            { title: 'Modern Brand Logo', 
+             desc: 'Minimalist corporate identity logo design.',
+             img: 'images/logo-design.png' }
         ],
         'photoshop': [
-            { title: 'Surreal Photo Manipulation', desc: 'Advanced image blending, lighting and grading.', img: 'images/manipulation.png' }
+            { title: 'Surreal Photo Manipulation',
+             desc: 'Advanced image blending, lighting and grading.',
+             img: 'images/manipulation.png' }
         ],
         'indesign': [],  // දැනට හිස්ව ඇති නිසා Auto "NO PROJECTS YET" කියලා වැටේවි
         'coreldraw': [],
         'websites': [
-            { title: 'Personal Portfolio Website', desc: 'Clean, responsive front-end dark layout design.', img: 'images/portfolio-site.png' }
+            { title: 'Personal Portfolio Website',
+             desc: 'Clean, responsive front-end dark layout design.',
+             img: 'images/portfolio-site.png' }
         ]
     };
 
