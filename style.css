@@ -15,6 +15,7 @@ body {
     --navbar-bg: rgba(11, 15, 25, 0.85);
     --highlight-bg-opacity: rgba(0, 243, 255, 0.12);
     
+    /* Dark Theme එකේදී තද දීප්තිමත් වර්ණ */
     --cyan-color: #00f3ff;
     --green-color: #39ff14;
     --pink-color: #ff007f;
@@ -31,6 +32,7 @@ body {
     cursor: none;
 }
 
+/* 💡 දසිත්, මෙන්න මෙතනින් Light Mode එකේ පාටවල් ඇස්වලට පහසු වෙන විදිහට මෘදු (Soft Pastel) කළා */
 body.light-theme {
     --bg-color: #f9fafb;
     --second-bg-color: #ffffff;
@@ -40,11 +42,12 @@ body.light-theme {
     --navbar-bg: rgba(249, 250, 251, 0.85);
     --highlight-bg-opacity: rgba(0, 0, 0, 0.05);
     
-    --cyan-color: #007791;
-    --green-color: #008f11;
-    --pink-color: #b9005b;
-    --orange-color: #c26100;
-    --purple-color: #6a0dad;
+    /* Light Theme එක සඳහා Soft Pastel Colors */
+    --cyan-color: #00829a;
+    --green-color: #1b9e07;
+    --pink-color: #d60065;
+    --orange-color: #d16e00;
+    --purple-color: #7b2cbf;
     
     --btn-text: #ffffff;
 }
@@ -105,10 +108,12 @@ a, button, .color-ball, .project-trigger {
     50% { opacity: 0; }
 }
 
+/* 💡 Mobile සහ Desktop දෙකේම දකුණු පැත්තේ මැද ස්ථාවරව (Fixed) තියාගන්න HUD එක වෙනස් කළා */
 .theme-controls-container {
     position: fixed;
-    top: 120px;
-    right: 30px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
     z-index: 3000;
     display: flex;
     flex-direction: column;
@@ -117,14 +122,14 @@ a, button, .color-ball, .project-trigger {
 }
 
 .control-btn {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: var(--second-bg-color);
     border: 2px solid var(--accent-color);
     color: var(--accent-color);
-    font-size: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     display: flex;
     justify-content: center;
@@ -159,8 +164,8 @@ a, button, .color-ball, .project-trigger {
 }
 
 .color-ball {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     border: 2px solid #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -529,7 +534,6 @@ a, button, .color-ball, .project-trigger {
     border-radius: 4px;
 }
 
-/* --- PROJECT GALLERY DYNAMIC GRID STYLING --- */
 .project-gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -588,7 +592,6 @@ a, button, .color-ball, .project-trigger {
     line-height: 1.5;
 }
 
-/* --- OVERLAY STYLING --- */
 .project-viewer-overlay {
     position: fixed;
     top: 0;
@@ -822,17 +825,30 @@ footer {
     100% { transform: translate(30px, -50px) scale(1.2); }
 }
 
+/* 📱 Responsive / Media Queries Optimization */
 @media(max-width: 768px) {
     body { cursor: default; }
     .custom-cursor-dot, .custom-cursor-outline { display: none; }
     .navbar { padding: 20px 5%; }
     .hero-section { flex-direction: column; text-align: center; justify-content: center; padding: 100px 5% 50px 5%; }
-    .hero-graphic { margin-top: 50px; width: 280px; height: 280px; }
+    .hero-graphic { margin-top: 30px; width: 280px; height: 280px; }
     .hero-btns { justify-content: center; }
     .hero-content h1 { font-size: 40px; }
     .hero-scroll-indicator { position: relative; bottom: 0; left: 0; transform: none; margin-top: 40px; }
-    .theme-controls-container { top: auto; bottom: 20px; right: 20px; flex-direction: row; }
-    .color-palette { flex-direction: row; transform: translateX(20px); }
-    .color-palette.active { transform: translateX(0); }
+    
+    /* 💡 මෙතන තිබුණු HUD එක පල්ලෙහාට යන කෝඩ් එක ඉවත් කරලා, ෆෝන් එකෙත් දකුණු පැත්තේ ස්ථාවර කළා */
+    .theme-controls-container { 
+        right: 12px; 
+        gap: 12px;
+    }
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .color-ball {
+        width: 24px;
+        height: 24px;
+    }
     .project-gallery-grid { grid-template-columns: 1fr; }
 }
